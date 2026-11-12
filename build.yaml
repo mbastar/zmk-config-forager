@@ -1,0 +1,11 @@
+# Artifacts: forager_left (central, holds the keymap, ZMK Studio over USB),
+# forager_right (peripheral), settings_reset (wipes pairings: flash to BOTH halves or neither).
+---
+include:
+  - board: xiao_ble//zmk
+    shield: forager_left rgbled_adapter
+    snippet: studio-rpc-usb-uart
+  - board: xiao_ble//zmk
+    shield: forager_right rgbled_adapter
+  - board: xiao_ble//zmk
+    shield: settings_reset

@@ -1,0 +1,25 @@
+# Every revision is pinned to a commit so a rebuild next month produces the same
+# firmware. To upgrade, bump all three together and flash both halves.
+# ZMK is on main, not v0.3: the Forager module uses the newer board name
+# (xiao_ble//zmk), which v0.3 cannot build.
+manifest:
+  remotes:
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
+    - name: pandakblab
+      url-base: https://github.com/PandaKBLab
+    - name: caksoylar
+      url-base: https://github.com/caksoylar
+  projects:
+    - name: zmk
+      remote: zmkfirmware
+      revision: 4dd95d7840eb3d5a3f59bb29fbf1ab054715ef85 # main, 2026-10-09
+      import: app/west.yml
+    - name: forager-zmk-module
+      remote: pandakblab
+      revision: 67e36e261245158cf4c353c5bacaebdb8490bb73 # main, 2026-08-15
+    - name: zmk-rgbled-widget
+      remote: caksoylar
+      revision: e6b467792a1dabef8cfa5c9fd26bfefc9c16662b # main, 2026-07-09
+  self:
+    path: config
