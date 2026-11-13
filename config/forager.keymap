@@ -350,7 +350,8 @@
             // | BT0 | BT1 | BT2 |BTCLR| STUDIO |   | USB | BLE |     |      |      |
             // | BOOT|RESET|     |     |BTCLRA  |   |     |     |     |RESET | BOOT |
             //
-            // BT1 = MacBook Air, BT2 = Mac Studio (same map as the other boards).
+            // BT0 (A) = Mac Studio, BT1 (S) = MacBook Air. Studio differs from the other
+            // boards (D there); the Air key matches.
             // &bootloader / &sys_reset are SOURCE-SPECIFIC on a split: each only
             // affects the half it is physically pressed on, so both halves need
             // their own. Studio locking is off in this module (forager_left.conf),
